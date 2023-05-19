@@ -1,12 +1,16 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const { engine } = require('express-handlebars');
 require('dotenv/config');
 
 app.use(express.json());
 
+app.set('view engine', 'handlebars');
+app.engine('handlebars', engine());
+
 app.get('/', (req, res) => {
-    res.send('Hello world! from express');
+    res.render('home');
 });
 
 app.listen(3000, () => {
