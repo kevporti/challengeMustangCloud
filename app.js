@@ -3,6 +3,8 @@ const app = express();
 const mongoose = require('mongoose');
 require('dotenv/config');
 
+app.use(express.json());
+
 app.get('/', (req, res) => {
     res.send('Hello world! from express');
 });
@@ -13,7 +15,7 @@ app.listen(3000, () => {
 
 // Router
 const positionTableRouter = require('./routes/positionTable');
-app.use('tabla-de-posiciones', positionTableRouter);
+app.use('/tabla-de-posiciones', positionTableRouter);
 
 // DB Connection
 mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true})
