@@ -1,9 +1,13 @@
 const express = require('express');
-const router = express.Router()
+const router = express.Router();
+const { scraping } = require('../scrapperScript');
 
 // Getting all Teams
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+    const data = await scraping();
 
+    console.log(data('table tbody tr.clasificacion').text())
+    // res.send(data);
 })
 
 // Creating One Team

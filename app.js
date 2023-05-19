@@ -6,6 +6,7 @@ require('dotenv/config');
 
 app.use(express.json());
 
+// Setting up Handlebars template
 app.set('view engine', 'handlebars');
 app.engine('handlebars', engine());
 
