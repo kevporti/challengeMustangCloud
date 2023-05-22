@@ -1,5 +1,6 @@
 const request = require('request');
 const cheerio = require('cheerio');
+const TableModel = require('./models/positionTable');
 require('dotenv/config');
 
 // Get the html of the page to scrape.
@@ -32,9 +33,9 @@ async function getTableData() {
 
         // Store team data in an array.
         teams[i] = {
-            posicion: i + 1,
+            pos: i + 1,
             equipo: html(el).find('td.equipo a span.d-md-inline').text(),
-            image: img,
+            logo: img,
             pj: html(el).find('td.bg-color').next().next().first().text(),
             g: html(el).find('td.d-none').first().text(),
             e: html(el).find('td.d-none').next().first().text(),
@@ -49,4 +50,20 @@ async function getTableData() {
     return teams;
 }
 
-module.exports = { getTableData };
+async function runCron() {
+    try {
+        // Wait for the scraped data.
+        const teams = await getTableData();
+
+        // Delete the old data.
+        await TableModel.deleteMany({});
+
+        // Save the new data.
+        await TableModel.create({data: teams});
+        console.log('Data saved.');
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+module.exports = { getTableData, runCron };

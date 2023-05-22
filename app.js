@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const { engine } = require('express-handlebars');
+require('./cron');
 require('dotenv/config');
 
 app.use(express.json());

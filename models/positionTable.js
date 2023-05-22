@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const tableSchema = new mongoose.Schema({
+const teamSchema = new mongoose.Schema({
     pos: {
         type: Number,
         required: true
     },
-    name: {
+    equipo: {
         type: String,
         required: true
     },
@@ -46,5 +46,12 @@ const tableSchema = new mongoose.Schema({
         required: true
     }
 });
+
+const tableSchema = new mongoose.Schema({
+    data: {
+      type: [teamSchema],
+      required: true
+    }
+  });
 
 module.exports = mongoose.model('tablaDePosiciones', tableSchema);
