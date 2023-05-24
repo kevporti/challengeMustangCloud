@@ -8,8 +8,11 @@ router.get('/', async (req, res) => {
     tableData = tableData.data;
     
     res.render('positionsTable', { 
-        tableData: tableData, 
+        tableData: tableData,
 
+        // Helper to get access to the data stored in each team.
+        // This should not be necessary but for some reason when iterating through the array, the data cannot be retrieved
+        // so I had to do it this way.
         helpers: {
             getPropById: function(teamObject, key) {
                 return teamObject[key];
@@ -23,21 +26,6 @@ router.get('/', async (req, res) => {
             }
         }
     });
-})
-
-// Creating One Team
-router.post('/create', (req, res) => {
-    
-})
-
-// Updating One Team
-router.patch('/update/:id', (req, res) => {
-    
-})
-
-// Deleting One Team
-router.delete('/delete/:id', (req, res) => {
-    
 })
 
 

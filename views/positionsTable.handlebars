@@ -1,4 +1,7 @@
 <H1>TABLA DE POSICIONES DE LA LIGA PROFESIONAL DE FUTBOL</H1>
+<div>
+    <p>Los cuatro mas grosos clasifican y los cuatro con peor desempeño juegan para salvarse del descenso.</p>
+</div>
 <table class="">
     <thead>
         <th>Pos</th>
@@ -16,6 +19,7 @@
         {{#each tableData as |teamObject key|}}
             {{#if teamObject}}
                 <tr class={{clasifica key}}>
+                    {{!-- {{getPropById should not be necessary and teamObject.pos (and others) should work fine but it doesn't.}} --}}
                     <td>{{getPropById teamObject 'pos'}}</td>
                     <td class="equipo"><img src={{getPropById teamObject 'logo'}} alt="">{{getPropById teamObject 'equipo'}}</td>
                     <td>{{getPropById teamObject 'pj'}}</td>

@@ -12,6 +12,7 @@ app.use(express.static('public'));
 app.set('view engine', 'handlebars');
 app.engine('handlebars', engine());
 
+// Rendering the home template for the default url.
 app.get('/', (req, res) => {
     res.render('home');
 });

@@ -1,6 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
-    background: #21424d;
+    background: #2a2b2a;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -8,7 +8,7 @@ body {
 }
 table {
   background: #012B39;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   border-collapse: collapse;
   margin-right: 1rem;
   margin-left: 1rem;
@@ -50,12 +50,16 @@ tbody tr:hover {
   column-gap: 0.5rem;
   align-items: center;
 }
+p {
+  text-align: left;
+  margin-left: 1rem;
+}
 a {
   text-decoration: none;
   color: #fff;
   padding: 2rem 4rem;
   background: #012B39;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
 }
 a:hover {
   background: #014055;
@@ -67,6 +71,9 @@ a:hover {
   height: 100vh;
   justify-content: center;
   align-items: center;
+}
+.home h1 {
+  font-weight: 300;
 }
 
 @media (max-width: 767px) {

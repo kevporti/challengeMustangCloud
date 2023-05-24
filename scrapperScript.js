@@ -21,6 +21,7 @@ function HTML_Structure() {
     });
 }
 
+// Get the data of the table given by the specified page.
 async function getTableData() {
     const html = await HTML_Structure();
 
@@ -50,6 +51,7 @@ async function getTableData() {
     return teams;
 }
 
+// Function to run the cron job every X time set in the .env file.
 async function runCron() {
     try {
         // Wait for the scraped data.

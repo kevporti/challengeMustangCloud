@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Schema to store the teams data.
 const teamSchema = new mongoose.Schema({
     pos: {
         type: Number,
@@ -47,6 +48,7 @@ const teamSchema = new mongoose.Schema({
     }
 });
 
+// Schema to store all the teams inside an array.
 const tableSchema = new mongoose.Schema({
     data: {
       type: [teamSchema],
