@@ -1,10 +1,14 @@
 body {
   font-family: 'Roboto', sans-serif;
-    background: #2a2b2a;
+    background: #272927;
     text-align: center;
     display: flex;
     flex-direction: column;
     color: #fff;
+}
+section {
+  display:flex;
+  flex-direction: column;
 }
 table {
   background: #012B39;
@@ -56,13 +60,18 @@ p {
 }
 a {
   text-decoration: none;
-  color: #fff;
+  color: #014055;
+  font-weight: 600;
+}
+a.button {
+  color: white;
   padding: 2rem 4rem;
   background: #012B39;
   border-radius: 0.5rem;
 }
 a:hover {
   background: #014055;
+  color: white;
 }
 .home {
   display: flex;

@@ -1,37 +1,42 @@
-<H1>TABLA DE POSICIONES DE LA LIGA PROFESIONAL DE FUTBOL</H1>
-<div>
-    <p>Los cuatro mas grosos clasifican y los cuatro con peor desempeño juegan para salvarse del descenso.</p>
-</div>
-<table class="">
-    <thead>
-        <th>Pos</th>
-        <th>Equipo</th>
-        <th>PJ</th>
-        <th>G</th>
-        <th>E</th>
-        <th>P</th>
-        <th class="no-responsive">GF</th>
-        <th class="no-responsive">GC</th>
-        <th class="no-responsive">DG</th>
-        <th>Pts</th>
-    </thead>
-    <tbody>
-        {{#each tableData as |teamObject key|}}
-            {{#if teamObject}}
-                <tr class={{clasifica key}}>
-                    {{!-- {{getPropById should not be necessary and teamObject.pos (and others) should work fine but it doesn't.}} --}}
-                    <td>{{getPropById teamObject 'pos'}}</td>
-                    <td class="equipo"><img src={{getPropById teamObject 'logo'}} alt="">{{getPropById teamObject 'equipo'}}</td>
-                    <td>{{getPropById teamObject 'pj'}}</td>
-                    <td>{{getPropById teamObject 'g'}}</td>
-                    <td>{{getPropById teamObject 'e'}}</td>
-                    <td>{{getPropById teamObject 'p'}}</td>
-                    <td class="no-responsive">{{getPropById teamObject 'gf'}}</td>
-                    <td class="no-responsive">{{getPropById teamObject 'gc'}}</td>
-                    <td class="no-responsive">{{getPropById teamObject 'dg'}}</td>
-                    <td>{{getPropById teamObject 'pts'}}</td>
-                </tr>
-            {{/if}}
-        {{/each}}
-    </tbody>
-</table>
+<section>
+    <H1>TABLA DE POSICIONES DE LA LIGA PROFESIONAL DE FUTBOL</H1>
+    <div>
+        <p>Los cuatro mas grosos clasifican y los cuatro con peor desempeño juegan para salvarse del descenso.</p>
+    </div>
+</section>
+<section>
+    <table class="">
+        <thead>
+            <th>Pos</th>
+            <th>Equipo</th>
+            <th>PJ</th>
+            <th>G</th>
+            <th>E</th>
+            <th>P</th>
+            <th class="no-responsive">GF</th>
+            <th class="no-responsive">GC</th>
+            <th class="no-responsive">DG</th>
+            <th>Pts</th>
+        </thead>
+        <tbody>
+            {{#each tableData as |teamObject key|}}
+                {{#if teamObject}}
+                    <tr class={{clasifica key}}>
+                        {{!-- {{getPropById should not be necessary and teamObject.pos (and others) should work fine but it doesn't.}} --}}
+                        <td>{{getPropById teamObject 'pos'}}</td>
+                        <td class="equipo"><img src={{getPropById teamObject 'logo'}} alt="{{getPropById teamObject 'equipo'}}"">{{getPropById teamObject 'equipo'}}</td>
+                        <td>{{getPropById teamObject 'pj'}}</td>
+                        <td>{{getPropById teamObject 'g'}}</td>
+                        <td>{{getPropById teamObject 'e'}}</td>
+                        <td>{{getPropById teamObject 'p'}}</td>
+                        <td class="no-responsive">{{getPropById teamObject 'gf'}}</td>
+                        <td class="no-responsive">{{getPropById teamObject 'gc'}}</td>
+                        <td class="no-responsive">{{getPropById teamObject 'dg'}}</td>
+                        <td>{{getPropById teamObject 'pts'}}</td>
+                    </tr>
+                {{/if}}
+            {{/each}}
+        </tbody>
+    </table>
+    
+</section>
