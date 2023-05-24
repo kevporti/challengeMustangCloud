@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const { engine, create } = require('express-handlebars');
+const { engine } = require('express-handlebars');
 const path = require('path');
 require('./cron');
 require('dotenv/config');
