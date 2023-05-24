@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const { engine } = require('express-handlebars');
+const { engine, create } = require('express-handlebars');
+const path = require('path');
 require('./cron');
 require('dotenv/config');
 
-app.use(express.json());
+app.use(express.static('public'));
 
 // Setting up Handlebars template
 app.set('view engine', 'handlebars');

@@ -1,1 +1,33 @@
-<H1>TABLE OF POSITIONS</H1>
+<H1>TABLA DE POSICIONES DE LA LIGA PROFESIONAL DE FUTBOL</H1>
+<table class="">
+    <thead>
+        <th>Pos</th>
+        <th>Equipo</th>
+        <th>PJ</th>
+        <th>G</th>
+        <th>E</th>
+        <th>P</th>
+        <th class="no-responsive">GF</th>
+        <th class="no-responsive">GC</th>
+        <th class="no-responsive">DG</th>
+        <th>Pts</th>
+    </thead>
+    <tbody>
+        {{#each tableData as |teamObject key|}}
+            {{#if teamObject}}
+                <tr class={{clasifica key}}>
+                    <td>{{getPropById teamObject 'pos'}}</td>
+                    <td class="equipo"><img src={{getPropById teamObject 'logo'}} alt="">{{getPropById teamObject 'equipo'}}</td>
+                    <td>{{getPropById teamObject 'pj'}}</td>
+                    <td>{{getPropById teamObject 'g'}}</td>
+                    <td>{{getPropById teamObject 'e'}}</td>
+                    <td>{{getPropById teamObject 'p'}}</td>
+                    <td class="no-responsive">{{getPropById teamObject 'gf'}}</td>
+                    <td class="no-responsive">{{getPropById teamObject 'gc'}}</td>
+                    <td class="no-responsive">{{getPropById teamObject 'dg'}}</td>
+                    <td>{{getPropById teamObject 'pts'}}</td>
+                </tr>
+            {{/if}}
+        {{/each}}
+    </tbody>
+</table>

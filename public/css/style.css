@@ -1,0 +1,98 @@
+body {
+  font-family: 'Roboto', sans-serif;
+    background: #21424d;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+table {
+  background: #012B39;
+  border-radius: 0.25rem;
+  border-collapse: collapse;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+th {
+  border-bottom: 1px solid #364043;
+  color: #E2B842;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  text-align: left;
+}
+td {
+  color: #fff;
+  font-weight: 400;
+  padding: 0.65rem 1rem;
+}
+tbody tr, a {
+  transition: background 0.25s ease;
+  text-align: left;
+}
+tbody tr:hover {
+  background: #014055;
+}
+.clasifica {
+  background: #005a00;
+}
+.clasifica:hover {
+  background: #008d00a6;
+}
+.desciende {
+  background: #7c0b0bef;
+}
+.desciende:hover {
+  background: #cc0000c2;
+}
+.equipo {
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  padding: 2rem 4rem;
+  background: #012B39;
+  border-radius: 0.25rem;
+}
+a:hover {
+  background: #014055;
+}
+.home {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 13px;
+  }
+  H1 {
+    text-align: left;
+    margin-left: 0.25rem;
+  }
+  .no-responsive {
+    display: none;
+  }
+  img {
+    width: 15%;
+  }
+  table {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+  th, td {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    flex-shrink: 1;
+  }
+  .equipo {
+    column-gap: 0.25rem;
+  }
+}
